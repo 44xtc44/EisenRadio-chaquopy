@@ -15,7 +15,20 @@ This repository shows the source code of an Android application with a Python pa
    
 * An idle ForeGroundService to show its implemetation
 
-![App image](https://github.com/44xtc44/EisenRadio-chaquopy/blob/master/eisen-chakko.png)
+<table style="padding:10px">
+<tr>
+  <td>
+      <img src="./android_studio_class_eisen_chakko.png"  alt="classes" width = 279px height = 496px >
+  </td>
+    
+  <td>
+      <img src="./android_studio_avm_eisen_chakko.png" alt="AVM open" width = 279px height = 496px>
+  </td>
+
+</tr>
+</table>
+
+
 
 ## Running the project
 
