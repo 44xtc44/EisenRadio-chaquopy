@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.hornr" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- Recorder can access Internet, Browser can access localhost Python Flask server -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />  <!-- camera is just to see multiple permissions question, enable in activity -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- https://stackoverflow.com/questions/73985513/android-permission-read-media-audio-and-read-external-storage-for-api-level-33 -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> <!-- Required to maintain app compatibility to older SDK versions. -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/parachute_ico_2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/parachute_ico_2"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Hornr"
+        android:usesCleartextTraffic="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".PythonApp.PythonAppActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".BasicModules.ForeGroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+        <service
+            android:name=".PythonApp.runEisenRadio"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <activity
+            android:name=".BasicModules.WebBrowserActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".PythonModule.PythonModuleActivity"
+            android:exported="false"
+            android:label="@string/title_activity_python_module"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".BasicModules.DisplayMessageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

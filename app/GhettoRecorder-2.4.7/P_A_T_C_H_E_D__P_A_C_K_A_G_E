@@ -1,0 +1,3 @@
+
+signal.signal (Ctrl+C end app) was removed, 
+else we are denied to run outside the Android main thread.

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:background="@drawable/ic_aircraft_logo_no_heading">
+
+    <EditText
+        android:id="@+id/txt_box_edit_message"
+		android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:hint="@string/edit_message"
+        android:inputType="textUri"
+        android:imeOptions="actionGo"/>
+
+    <Button
+        android:id="@+id/btn_edit_message"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#7137C8"
+        android:text="@string/button_send"
+        android:onClick="sendMessage"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/txt_box_edit_message"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btn_call_python_module"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1E6388"
+        android:text="@string/button_call_python"
+        android:onClick="callPythonModule"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/btn_edit_message"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btn_python_app"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_call_python_module"
+        android:layout_margin="8dp"
+        android:backgroundTint="#FF0066"
+        android:onClick="pythonApp"
+        android:padding="8dp"
+        android:text="@string/button_python_app"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnStartForegroundService"
+        android:state_pressed = "false"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1B0602"
+        android:text="@string/button_StartForegroundService"
+        android:onClick="startForeGroundService"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/btn_python_app"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

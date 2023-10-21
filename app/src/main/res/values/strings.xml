@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EisenRadio-chaquopy</string>
+    <string name="edit_message">Click to enter a message</string>
+    <string name="button_send">Send message</string>
+    <string name="button_call_python">Python module</string>
+    <string name="button_python_app">Python App</string>
+    <string name="button_StartForegroundService">"Start \n ForeGroundService"</string>
+    <string name="title_activity_display_message">Display Message</string>
+    <string name="title_activity_python_module">Python return value</string>
+    <string name="search_or_type_url">search or type URL</string>
+</resources>
