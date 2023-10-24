@@ -23,7 +23,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
 import android.os.Build;
-import android.util.Log;
 import android.os.Bundle;
 import android.view.View;
 import android.os.Handler;
@@ -32,20 +31,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.widget.EditText;
 
-import com.hornr.PythonApp.AssetExtractor;
 import com.hornr.PythonApp.PythonAppActivity;
 import com.hornr.BasicModules.ForeGroundService;
 import com.hornr.BasicModules.DisplayMessageActivity;
 
-import com.chaquo.python.Python;
-import com.chaquo.python.android.AndroidPlatform;
 import com.hornr.PythonModule.PythonModuleActivity;
 import com.hornr.R;
 
 // default class of an empty app
 public class MainActivity extends AppCompatActivity {
-
-    private static final String LOG_TAG = "[MainActivity]";
 
     boolean isBtnForeGroundServicePressed = false;
 
@@ -60,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         // response to writing text and button press, custom activity DisplayMessageActivity.java
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.txt_box_edit_message);
+        EditText editText = findViewById(R.id.txt_box_edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
@@ -83,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
         browser.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         final Handler handler = new Handler();
-        handler.postDelayed(() -> {
-            startActivity(browser);
-        }, 5000);  // don't hide a permission request dialog
+        handler.postDelayed(() -> startActivity(browser), 5000);  // don't hide a permission request dialog
     }
 
     /** Start ForeGroundService button */

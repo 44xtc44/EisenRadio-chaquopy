@@ -24,24 +24,7 @@ import com.hornr.R;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
-/*
-        Needs Android Network access config
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        In Android Manifest, in tag <application add:
-
-        android:usesCleartextTraffic="true"
-        android:networkSecurityConfig="@xml/network_security_config"
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-
-        Create a resource folder type xml and add a file *network_security_config.xml* and write this:
-
-        <?xml version="1.0" encoding="utf-8"?>
-          <network-security-config>
-            <base-config cleartextTrafficPermitted="true" />
-          </network-security-config>
-        For Certificate Authorities (CA) see https://developer.android.com/privacy-and-security/security-config
- */
 public class ForeGroundService extends Service {
     // class that extends the Service class and overrides its methods.
 
