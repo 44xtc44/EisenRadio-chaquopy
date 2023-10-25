@@ -64,7 +64,9 @@ public class runEisenRadio extends Service {
         try {
             doTask();
         } catch (ExecutionException | InterruptedException | IOException e) {
-            throw new RuntimeException(e);
+            String errMsg = "RuntimeException in doTask() " + LOG_TAG;
+            Log.i(LOG_TAG, errMsg, e);
+            Toast.makeText(this, errMsg, Toast.LENGTH_SHORT).show();
         }
         return super.onStartCommand(intent, flags, startID);
     }

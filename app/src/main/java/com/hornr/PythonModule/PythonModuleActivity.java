@@ -47,7 +47,9 @@ public class PythonModuleActivity extends AppCompatActivity {
         try {
             doTask();  // thread
         } catch (IOException | ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
+            StringBuilder errMsg = new StringBuilder();
+            errMsg.append("RuntimeException in ").append(LOG_TAG).append(e);
+            textView.setText(errMsg);
         }
     }
     private void doTask() throws IOException, ExecutionException, InterruptedException {
@@ -76,6 +78,7 @@ public class PythonModuleActivity extends AppCompatActivity {
 
             }catch (JSONException e){
                 Log.d(LOG_TAG, e.toString());
+                msg[0] = "JSONException in " + LOG_TAG;  // method exception caught in "onCreate"
             }
             handler.post(() -> {
                 // update Android UI
