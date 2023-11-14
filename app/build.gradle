@@ -36,7 +36,8 @@ android {
             pip {
                 install "./GhettoRecorder-2.4.7"  // dir relative to project (setup.cfg), pkg patched
                 install "py-fibonacci"
-                install "git+https://github.com/44xtc44/EisenRadio.git"
+                // install "git+https://github.com/44xtc44/EisenRadio.git"
+                install "eisenradio==2.3.3"
             }
         }
     }
